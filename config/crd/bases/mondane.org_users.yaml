@@ -43,8 +43,6 @@ spec:
                   type: string
                 type: array
               username:
-                description: Foo is an example field of User. Edit user_types.go to
-                  remove/update
                 type: string
             required:
             - email
