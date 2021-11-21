@@ -33,7 +33,11 @@ import (
 
 	mondaneorgv1alpha1 "github.com/shaardie/mondane-operator/api/v1alpha1"
 	"github.com/shaardie/mondane-operator/controllers"
+
 	//+kubebuilder:scaffold:imports
+
+	monitoringv1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1"
+	monitoringv1alpha1 "github.com/prometheus-operator/prometheus-operator/pkg/apis/monitoring/v1alpha1"
 )
 
 var (
@@ -46,6 +50,9 @@ func init() {
 
 	utilruntime.Must(mondaneorgv1alpha1.AddToScheme(scheme))
 	//+kubebuilder:scaffold:scheme
+
+	utilruntime.Must(monitoringv1.AddToScheme(scheme))
+	utilruntime.Must(monitoringv1alpha1.AddToScheme(scheme))
 }
 
 func main() {
